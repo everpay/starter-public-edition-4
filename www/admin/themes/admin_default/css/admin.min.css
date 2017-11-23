@@ -8,3 +8,7 @@
     margin: -.3em 0em;
     width: 7.5em;
 }
+
+.ui.segments .segment, .ui.segment {
+    font-size: .795rem;
+}
