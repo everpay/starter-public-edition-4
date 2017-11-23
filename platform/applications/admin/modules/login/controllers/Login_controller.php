@@ -72,7 +72,6 @@ class Login_controller extends Base_Controller {
             $this->template->set('validation_errors', validation_errors_array());
         }
 
-        $this->captcha->clear();
 
         $this->template
             ->prepend_title('Login')
