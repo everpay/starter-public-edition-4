@@ -39,23 +39,7 @@
                         </div>
                     </div>
 
-                    <div class="field">
-                        <img id="captcha_image"
-                            class="ui middle aligned image pointer"
-                            src="{{ captcha().src ~ '?nocache=' ~ rand(100000000, 999999999) }}"
-                            title="{{ lang('captcha.tip')|e('html_attr') }}"
-                        />
-                        <button type="button" id="captcha_refresh" class="ui icon button" title="{{ lang('ui_refresh')|e('html_attr') }}"><i class="refresh icon"></i></button>
-                    </div>
-
-                    <div class="field{% if validation_errors['captcha'] %} error{% endif %}">
-                        <div class="ui big left icon input">
-                            <input type="text" id="captcha" name="captcha" placeholder="* {{ lang('captcha.label')|e('html_attr') }}" maxlength="{{ captcha().length }}" autocomplete="off" autocorrect="off" autocapitalize="off" />
-                            <i class="privacy icon"></i>
-                        </div>
-                    </div>
-
-                    <button class="ui fluid big primary button" type="submit"><i class="sign in icon"> {{ lang('ui_login') }}</i></button>
+          <button class="ui fluid big primary button" type="submit"><i class="sign in icon"> {{ lang('ui_login') }}</i></button>
 
                 </div>
 
