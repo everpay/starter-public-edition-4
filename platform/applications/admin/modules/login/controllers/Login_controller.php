@@ -5,12 +5,7 @@ class Login_controller extends Base_Controller {
     public function __construct() {
 
         parent::__construct();
-
-        $this->load
-            ->library('kcaptcha', null, 'captcha')
-            ->language('captcha')
-        ;
-
+        
         $this->template->set_layout('login');
     }
 
@@ -29,11 +24,7 @@ class Login_controller extends Base_Controller {
                 'label' => 'lang:ui_password',
                 'rules' => 'nohtml|trim|required'
             ),
-            array(
-                'field' => 'captcha',
-                'label' => 'Captcha',
-                'rules' => 'nohtml|trim|callback__captcha'
-            ),
+            
         );
 
         $this->form_validation->set_rules($login_rules);
@@ -87,18 +78,6 @@ class Login_controller extends Base_Controller {
             ->prepend_title('Login')
             ->set_partial('scripts', 'login_scripts')
             ->build('login');
-    }
-
-    public function _captcha($string) {
-
-        $captcha_valid = $this->captcha->valid($string);
-        $this->captcha->clear();
-
-        if (!$captcha_valid) {
-            $this->form_validation->set_message('_captcha', $this->lang->line('captcha.validation_error'));
-        }
-
-        return $captcha_valid;
     }
 
 }
