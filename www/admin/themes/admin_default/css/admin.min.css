@@ -2,3 +2,9 @@
 .ui.inverted.menu .white.active.item, .ui.inverted.white.menu {
     background-color: #FFF;
 }
+.ui.menu .item>img:not(.ui) {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -.3em 0em;
+    width: 7.5em;
+}
